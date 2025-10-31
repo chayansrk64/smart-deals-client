@@ -4,9 +4,9 @@ import { Link, NavLink } from 'react-router';
 const Navbar = () => {
 
     const links = <>
-        <NavLink to="/"><li>Home</li></NavLink>
-        <NavLink to="all-products"><li>All Products</li></NavLink>
-        <NavLink to="my-products"><li>My Products</li></NavLink>
+         <li><NavLink to="/">Home</NavLink></li>
+         <li><NavLink to="/all-products">All Products</NavLink></li>
+         <li><NavLink to="/my-products">My Products</NavLink></li>
     </>
 
     return (
