@@ -4,7 +4,7 @@ import Product from '../Product/Product';
 const LatestProducts = ({latestProductsPromise}) => {
 
     const latestProducts = use(latestProductsPromise)
-    console.log(latestProducts);
+    // console.log(latestProducts);
 
     return (
         <div className='w-11/12 mx-auto py-6'>

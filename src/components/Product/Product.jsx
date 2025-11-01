@@ -1,7 +1,8 @@
 import React from 'react';
+import { Link } from 'react-router';
 
 const Product = ({product}) => {
-    const {title, price_max, price_min, image} = product;
+    const {_id, title, price_max, price_min, image} = product;
     return (
         <div>
             <div className="card bg-base-100 shadow-sm">
@@ -16,12 +17,11 @@ const Product = ({product}) => {
                 </figure>
             <div className="card-body">
                 <h2 className="card-title text-xl">{title}</h2>
-                 <div className='flex justify-between text-md font-semibold'>
-                    <span>$ {price_max}</span>
-                    <span>$ {price_min}</span>
+                 <div className='text-md font-semibold'>
+                    <p>Price: {price_min} - {price_max} </p>
                  </div>
                 <div className="card-actions justify-center">
-                <button className="btn btn-primary w-full">View Details</button>
+                <Link to={`/product-details/${_id}`} className="btn btn-primary w-full">View Details</Link>
                 </div>
             </div>
             </div>
