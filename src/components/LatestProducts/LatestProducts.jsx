@@ -11,7 +11,7 @@ const LatestProducts = ({latestProductsPromise}) => {
             <h3>Recent Products</h3>
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4'>
                 {
-                    latestProducts.map(product => <Product product={product}></Product>)
+                    latestProducts.map(product => <Product product={product} key={product._id}></Product>)
                 }
             </div>
         </div>
