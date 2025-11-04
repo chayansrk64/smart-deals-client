@@ -1,15 +1,19 @@
 import React, { use } from 'react';
 import { AuthContext } from '../../providers/AuthContext';
-
+import { useLocation, useNavigate } from 'react-router';
+ 
 const SocialLogin = () => {
     const {googleSignIn} = use(AuthContext);
-    
+    const navigate = useNavigate()
+    const location = useLocation();
 
     const handleGoogleLogIn = () => {
         googleSignIn()
         .then(result => {
             console.log(result.user);
             const user = result.user;
+
+            navigate(`${location.state ? location.state : "/"}`)
 
             const newUser = {
                 name: user.displayName,

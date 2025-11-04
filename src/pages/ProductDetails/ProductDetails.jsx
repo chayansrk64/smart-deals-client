@@ -1,5 +1,5 @@
 import React, { use, useEffect, useRef, useState } from 'react';
-import { useLoaderData } from 'react-router';
+import {  useLoaderData } from 'react-router';
 import { AuthContext } from '../../providers/AuthContext';
 import { toast } from 'react-toastify';
 
@@ -12,7 +12,7 @@ const ProductDetails = () => {
     // console.log(product);
     
     const handleBidModalOpen = () => {
-        bidModalRef.current.showModal()
+      bidModalRef.current.showModal() 
     }
      
    const handleBidSubmit = e => {
