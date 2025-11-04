@@ -57,13 +57,17 @@ const ProductDetails = () => {
    }
 
    useEffect(() => {
-        fetch(`http://localhost:3000/products/bids/${productId}`)
+        fetch(`http://localhost:3000/products/bids/${productId}`, {
+          headers: {
+            authorization: `Bearer ${user.accessToken}`
+          }
+        })
         .then(res => res.json())
         .then(data => {
             setBids(data)
             console.log("bids for this product",data);
         })
-   }, [productId])
+   }, [productId, user])
 
 
     return (

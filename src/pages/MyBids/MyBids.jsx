@@ -19,7 +19,7 @@ const MyBids = () => {
             setBids(data)
             // console.log(data);
         })
-    }, [user?.email, user.accessToken])
+    }, [user])
 
 
     // const handleDeleteBid = (_id) => {
