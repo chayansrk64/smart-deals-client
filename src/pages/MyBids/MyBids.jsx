@@ -11,7 +11,7 @@ const MyBids = () => {
     useEffect(() => {
         fetch(`http://localhost:3000/bids?email=${user?.email}`, {
           headers: {
-            authorization: `Bearer ${user.accessToken}`
+            authorization: `Bearer ${localStorage.getItem('token')}`
           }
         })
         .then(res => res.json())
@@ -20,6 +20,19 @@ const MyBids = () => {
             // console.log(data);
         })
     }, [user])
+
+    // useEffect(() => {
+    //     fetch(`http://localhost:3000/bids?email=${user?.email}`, {
+    //       headers: {
+    //         authorization: `Bearer ${localStorage.getItem('token')}`
+    //       }
+    //     })
+    //     .then(res => res.json())
+    //     .then(data => {
+    //         setBids(data)
+    //         // console.log(data);
+    //     })
+    // }, [user])
 
 
     // const handleDeleteBid = (_id) => {
